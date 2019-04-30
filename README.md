@@ -36,7 +36,7 @@ We will be practicing making POST, PATCH, and DELETE requests to an API, and mak
 ![Example](assets/demo3.gif)
 
 
-* If a kid'z vote hits -5, they will be deleted from the DOM AS WELL AS the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
+* If a kid'z vote hits -5, they will be deleted from the DOM *as well as* the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
 
   ![Example](assets/demo4.gif)
 
