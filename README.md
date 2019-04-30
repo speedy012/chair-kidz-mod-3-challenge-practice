@@ -33,7 +33,11 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
 ![Example](assets/demo2.gif)
 
- * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote (up or down). When a kid'z vote count gets to 5, they should take a seat at the throne. A patch request should be sent to the correct URL that will set the `Kid`'z `throne` attribute to `true`. While a kid is in the throne, they cannot be voted on. If a kid'z vote hits -5, they will be deleted from the DOM AS WELL AS the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
+ * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote (up or down). 
+ 
+* When a kid'z `vote` count gets to 5, they should take a seat at the throne, replacing the previous kid on the throne if there was one. A patch request should be sent to the correct URL that will set the `Kid`'z `throne` attribute to `true`, and will automatically set the previous kid in the throne's attribute to `false`. While a kid is in the throne, they cannot be voted on. 
+
+* If a kid'z vote hits -5, they will be deleted from the DOM AS WELL AS the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
 
   ![Example](assets/demo4.gif)
 
@@ -42,8 +46,6 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
  ![Example](assets/demo3.gif)
 
  * As a user, I can use the form to create a new kid. The new kid will automatically appear on the DOM in a chair and will be added to the database.
-
-<!-- * As a user I should not be able to purchase a ticket for a sold out showing. The 'Buy Ticket' button should be disabled on sold out showings, and the text should change to "sold out". -->
 
 ## Implementation Notes
 
