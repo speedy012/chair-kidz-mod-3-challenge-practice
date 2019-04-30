@@ -10,7 +10,7 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
 ![Example](assets/demo1.gif)
 
-* As a user, when the page loads, I should see a list of `kidz` in a drop-down list. Selecting a kid and pressing the `Add Kid` button should place the kid in a chair on the DOM. The styling has been done for you, and the resulting HTML for a `Kid` should look as follows:
+* As a user, when the page loads, I should see a list of `kidz` in a drop-down list. Selecting a kid and pressing the `Add Kid` button should place the kid in a chair on the DOM. A patch request should be sent to the backend, resulting in changing that kid'z `in_chair` attribute to `true`. The styling has been done for you, and the resulting HTML for a `Kid` should look as follows:
 
 ```html
 <div id=3-container class="kid-chair-container">
@@ -28,8 +28,6 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
   </div>
 </div>
 ```
-
- A patch request should be sent to the backend, resulting in changing that kid'z `in_chair` attribute to `true`.
  
  * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote ("up" or "down"). 
  
