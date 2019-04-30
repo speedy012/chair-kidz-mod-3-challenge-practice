@@ -14,7 +14,7 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
 ```html
 <div id=3-container class="kid-chair-container">
-  <img class="image" src="someurl.jpg"} />
+  <img class="image" src="someurl.jpg" />
   <br>
   <br>
   <div data-id=3 class="attribute">
@@ -31,7 +31,7 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
  
  * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote ("up" or "down"). 
  
-* When a kid'z `vote` count gets to 5, they should take a seat at the throne, replacing the previous kid on the throne if there was one. A patch request should be sent to the correct URL that will set the kid'z `throne` attribute to `true`, and will automatically set the previous kid in the throne's attribute to `false`. While a kid is in the throne, they cannot be voted on. 
+* When a kid'z `vote` count gets to 5, they should take a seat at the throne, replacing the previous kid on the throne if there was one. The previous kid on the throne should re-appear in a regular chair in the `chairs-container`. A patch request should be sent to the correct URL that will set the kid'z `throne` attribute to `true`, and will automatically set the previous kid in the throne's attribute to `false`. By achieving a `throne` attribute of `true`, the `votes` attribute for that kid will be automatically reset to 0. While a kid is in the throne, they cannot be voted on. 
 
 ![Example](assets/demo3.gif)
 
@@ -104,13 +104,38 @@ Required Keys
 
 {
   kid_id: <add kid_id here>
-  vote: <"up" or "down" here>
+  img_url: <image url here>
 }
 ```
 
-#### PATCH `/kids/chair`, `kids/throne`
+#### PATCH `/kids/chair`
 
-Accepts a key of a `kid_id` and switches that kid'z `in_chair` or `throne` attribute to be the opposite of what it was before. NOTE: When a kid'z `throne` status is changed, their `votes` attribute is automatically reset to 0.
+Accepts a key of a `kid_id` and switches that kid'z `in_chair` attribute to be the opposite of what it was before. 
+
+```
+Required Headers
+{
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+Required Keys
+
+{
+  kid_id: <add kid_id here>
+}
+
+```
+
+A successful request will return the updated `Kid` instance.
+
+#### PATCH `/kids/throne`
+
+Works very similarly to /kids/chair. Accepts a key of a `kid_id` and switches that kid'z `throne` attribute to be the opposite of what it was before. 
+
+NOTE: If there was a previous kid in the throne, their `throne` attribute is automatically set back to `false`, and they should show up back in a regular chair on the DOM. 
+
+NOTE: When a kid'z `throne` status is changed, their `votes` attribute is automatically reset to 0. 
 
 ```
 Required Headers
