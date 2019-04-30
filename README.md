@@ -10,7 +10,7 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
 ![Example](assets/demo1.gif)
 
-* As a user, when the page loads, I should see a list of `kidz` in a drop-down list. Selecting a kid and pressing the `Add Kid` button should place the kid in a chair on the DOM. The styling has done for you, and the resulting HTML for a `Kid` should be as follows:
+* As a user, when the page loads, I should see a list of `kidz` in a drop-down list. Selecting a kid and pressing the `Add Kid` button should place the kid in a chair on the DOM. The styling has been done for you, and the resulting HTML for a `Kid` should look as follows:
 
 ```html
 <div id=3-container class="kid-chair-container">
