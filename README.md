@@ -30,10 +30,10 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 ```
 
  A patch request should be sent to the backend, resulting in changing that kid'z `in_chair` attribute to `true`.
-
-![Example](assets/demo3.gif)
-
+ 
  * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote ("up" or "down"). 
+ 
+![Example](assets/demo3.gif)
  
 * When a kid'z `vote` count gets to 5, they should take a seat at the throne, replacing the previous kid on the throne if there was one. A patch request should be sent to the correct URL that will set the kid'z `throne` attribute to `true`, and will automatically set the previous kid in the throne's attribute to `false`. While a kid is in the throne, they cannot be voted on. 
 
