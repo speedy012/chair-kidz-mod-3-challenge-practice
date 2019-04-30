@@ -31,7 +31,7 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
  A patch request should be sent to the backend, resulting in changing that kid'z `in_chair` attribute to `true`.
 
-![Example](assets/demo2.gif)
+![Example](assets/demo3.gif)
 
  * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote ("up" or "down"). 
  
@@ -41,7 +41,7 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
  * As a user, when I click the `Hide` link under a kid, the kid should disappear from the DOM and re-appear back inside the dropdown list. Their `in_chair` attribute should be changed to `false` using a PATCH request to the appropriate URL.
 
- ![Example](assets/demo3.gif)
+ ![Example](assets/demo2.gif)
 
  * As a user, I can use the form to create a new kid. The new kid will automatically appear on the DOM in a chair and will be added to the database.
 
