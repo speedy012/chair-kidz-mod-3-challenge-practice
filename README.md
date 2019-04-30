@@ -54,7 +54,7 @@ All of your code will be written in the index.js file located in the `chair-kidz
 
 ### The API
 
-Navigate into the `chair-kidz-backend` folder in this repository, run `bundle install`, then `rails db:setup` to create your database and the starting seeded information, and then `rails s` to get the server going. You will be making all requests to your locally hosted server at port 3000.
+Navigate into the `chair-kidz-backend` folder in this repository, run `bundle install`, then `rails db:setup` to create your database and seed the initial data, and then `rails s` to get the server going. You will be making all requests to your locally hosted server at port 3000.
 
 #### GET `/kids`
 
