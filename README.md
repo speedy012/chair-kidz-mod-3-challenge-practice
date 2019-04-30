@@ -35,6 +35,8 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
  * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote (up or down). When a kid'z vote count gets to 5, they should take a seat at the throne. A patch request should be sent to the correct URL that will set the `Kid`'z `throne` attribute to `true`. While a kid is in the throne, they cannot be voted on. If a kid'z vote hits -5, they will be deleted from the DOM AS WELL AS the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
 
+  ![Example](assets/demo4.gif)
+
  * As a user, when I click the `Hide` link under a kid, the kid should disappear from the DOM and re-appear back inside the dropdown list. Their `in_chair` attribute should be changed to `false` using a PATCH request to the appropriate URL.
 
  ![Example](assets/demo3.gif)
