@@ -10,7 +10,7 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
 ![Example](assets/demo1.gif)
 
-* As a user, when the page loads, I should see a list of `kidz` in a drop-down list. Selecting a kid and pressing the `Add Kid` button should place the kid in a chair on the DOM. The styling has done for you, and the resulting HTML for a `Kid` should be as follows:
+* As a user, when the page loads, I should see a list of `kidz` in a drop-down list. Selecting a kid and pressing the `Add Kid` button should place the kid in a chair on the DOM. A patch request should be sent to the backend, resulting in changing that kid'z `in_chair` attribute to `true`. The styling has been done for you, and the resulting HTML for a `Kid` should look as follows:
 
 ```html
 <div id=3-container class="kid-chair-container">
@@ -28,22 +28,23 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
   </div>
 </div>
 ```
+ 
+ * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote ("up" or "down"). 
+ 
+* When a kid'z `vote` count gets to 5, they should take a seat at the throne, replacing the previous kid on the throne if there was one. A patch request should be sent to the correct URL that will set the kid'z `throne` attribute to `true`, and will automatically set the previous kid in the throne's attribute to `false`. While a kid is in the throne, they cannot be voted on. 
 
- A patch request should be sent to the backend, resulting in changing that kid'z `in_chair` attribute to `true`.
+![Example](assets/demo3.gif)
 
-![Example](assets/demo2.gif)
 
- * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote (up or down). When a kid'z vote count gets to 5, they should take a seat at the throne. A patch request should be sent to the correct URL that will set the `Kid`'z `throne` attribute to `true`. While a kid is in the throne, they cannot be voted on. If a kid'z vote hits -5, they will be deleted from the DOM AS WELL AS the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
+* If a kid'z vote hits -5, they will be deleted from the DOM AS WELL AS the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
 
   ![Example](assets/demo4.gif)
 
  * As a user, when I click the `Hide` link under a kid, the kid should disappear from the DOM and re-appear back inside the dropdown list. Their `in_chair` attribute should be changed to `false` using a PATCH request to the appropriate URL.
 
- ![Example](assets/demo3.gif)
+ ![Example](assets/demo2.gif)
 
  * As a user, I can use the form to create a new kid. The new kid will automatically appear on the DOM in a chair and will be added to the database.
-
-<!-- * As a user I should not be able to purchase a ticket for a sold out showing. The 'Buy Ticket' button should be disabled on sold out showings, and the text should change to "sold out". -->
 
 ## Implementation Notes
 
