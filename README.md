@@ -2,7 +2,7 @@
 
 A vanilla JavaScript app that is truly quite random...fork and clone this repository and let's get started!
 
-We will be practicing making POST, PATCH, and DELETE requests to an API, and making sure updated and persisted data on the backend reflects on the front end so that a page refresh does not alter the state of the application. If at any point you are confused about how the back-end is working, PLEASE investigate the controller on the backend to clarify any confusion. 
+We will be practicing making POST, PATCH, and DELETE requests to an API, and making sure updated and persisted data on the backend reflects on the front end so that a page refresh does not alter the state of the application. If at any point you are confused about how the backend is working, PLEASE investigate the controller to clarify any confusion. 
 
 NOTE: this challenge is significantly harder than the code challenge, and is meant to be thorough practice!
 
