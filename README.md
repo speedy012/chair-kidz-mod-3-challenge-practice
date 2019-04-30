@@ -2,9 +2,9 @@
 
 A vanilla JavaScript app that is truly quite random...fork and clone this repository and let's get started!
 
-We will be practicing making POST, PATCH, and DELETE requests to an API, and making sure updated and persisted data on the backend reflects on the front end so that a page refresh does not alter the state of the application.
+We will be practicing making POST, PATCH, and DELETE requests to an API, and making sure updated and persisted data on the backend reflects on the front end so that a page refresh does not alter the state of the application. If at any point you are confused about how the backend is working, PLEASE investigate the controller to clarify any confusion. 
 
-NOTE: this challenge is significantly harder than the code challenge, and is meant to be thorough practice!
+*NOTE:* this challenge is harder than the code challenge, and is meant to be thorough practice!
 
 ## Deliverables
 
@@ -29,14 +29,14 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 </div>
 ```
  
- * As a user, voting up or down on a kid will alter their `vote` count on the DOM as well as on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` AS WELL AS as the direction of the vote ("up" or "down"). 
+ * As a user, voting up or down on a kid will alter their `vote` count on the DOM *as well as* on the backend. We do this by sending a PATCH request to the correct URL and providing the `kid_id` *as well as* as the direction of the vote ("up" or "down"). 
  
 * When a kid'z `vote` count gets to 5, they should take a seat at the throne, replacing the previous kid on the throne if there was one. The previous kid on the throne should re-appear in a regular chair in the `chairs-container`. A patch request should be sent to the correct URL that will set the kid'z `throne` attribute to `true`, and will automatically set the previous kid in the throne's attribute to `false`. By achieving a `throne` attribute of `true`, the `votes` attribute for that kid will be automatically reset to 0. While a kid is in the throne, they cannot be voted on. 
 
 ![Example](assets/demo3.gif)
 
 
-* If a kid'z vote hits -5, they will be deleted from the DOM AS WELL AS the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
+* If a kid'z vote hits -5, they will be deleted from the DOM *as well as* the database, requiring a DELETE request sent to the backend that requires the `kid_id`.
 
   ![Example](assets/demo4.gif)
 
@@ -54,7 +54,7 @@ All of your code will be written in the index.js file located in the `chair-kidz
 
 ### The API
 
-Navigate into the `chair-kidz-backend` folder in this repository, run `bundle install`, then `rails db:setup` to create your database and the starting seeded information, and then `rails s` to get the server going. You will be making all requests to your locally hosted server at port 3000.
+Navigate into the `chair-kidz-backend` folder in this repository, run `bundle install`, then `rails db:setup` to create your database and seed the initial data, and then `rails s` to get the server going. You will be making all requests to your locally hosted server at port 3000.
 
 #### GET `/kids`
 
@@ -133,9 +133,9 @@ A successful request will return the updated `Kid` instance.
 
 Works very similarly to /kids/chair. Accepts a key of a `kid_id` and switches that kid'z `throne` attribute to be the opposite of what it was before. 
 
-NOTE: If there was a previous kid in the throne, their `throne` attribute is automatically set back to `false`, and they should show up back in a regular chair on the DOM. 
+*NOTE:* If there was a previous kid in the throne, their `throne` attribute is automatically set back to `false`, and they should show up back in a regular chair on the DOM. 
 
-NOTE: When a kid'z `throne` status is changed, their `votes` attribute is automatically reset to 0. 
+*NOTE:* When a kid'z `throne` status is changed, their `votes` attribute is automatically reset to 0. 
 
 ```
 Required Headers
@@ -176,3 +176,5 @@ Required Keys
 ### Considerations
 
 You are free to solve this in any way you choose. It is not required that you have ES6 classes or use Object Orientation. If you want to challenge yourself, build the app using optomistic rendering principles.
+
+Have fun!
