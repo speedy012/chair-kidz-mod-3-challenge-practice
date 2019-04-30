@@ -49,7 +49,7 @@ NOTE: this challenge is significantly harder than the code challenge, and is mea
 
 ### The Frontend
 
-All of your code will be written in the index.js file located in the `chair-kidz-frontend` folder of this repository. But the backend will need some setup. See following instructionsL:
+All of your code will be written in the index.js file located in the `chair-kidz-frontend` folder of this repository. But the backend will need some setup. See following instructions:
 
 ### The API
 
